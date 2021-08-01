@@ -1,6 +1,6 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-from Renderer import Renderer
+from __future__ import absolute_import
+from __future__ import division
+from Components.Renderer.Renderer import Renderer
 from enigma import ePixmap, loadPNG
 from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN, fileExists
 from Components.config import config

@@ -1,11 +1,8 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
 from Plugins.Plugin import PluginDescriptor
 from Components.config import config
 import threading
-import xtra
-import download
-
+from . import xtra
+from . import download
 
 def ddwn():
 	if config.plugins.xtraEvent.timerMod.value == True:
@@ -21,8 +18,6 @@ if config.plugins.xtraEvent.timerMod.value == True:
 
 
 def main(session, **kwargs):
-	reload(xtra)
-	reload(download)
 	try:
 		session.open(xtra.xtra)
 	except:

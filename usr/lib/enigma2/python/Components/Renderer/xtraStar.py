@@ -1,13 +1,15 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
+from __future__ import absolute_import
+from __future__ import division
 from Components.VariableValue import VariableValue
-from Renderer import Renderer
+from Components.Renderer.Renderer import Renderer
 from enigma import eSlider
 from Components.config import config
 import re
 import json
+import os
 
 try:
+	from Plugins.Extensions.xtraEvent.xtra import xtra
 	pathLoc = config.plugins.xtraEvent.loc.value
 except:
 	pass
@@ -36,7 +38,7 @@ class xtraStar(VariableValue, Renderer):
 				evnt = event.getEventName()
 				evntNm = re.sub("([\(\[]).*?([\)\]])|(: odc.\d+)|(\d+: odc.\d+)|(\d+ odc.\d+)|(:)|( -(.*?).*)|(,)|!", "", evnt).rstrip()
 				rating_json = "{}xtraEvent/infos/{}.json".format(pathLoc, evntNm)
-				if rating_json:
+				if os.path.exists(rating_json):
 					with open(rating_json) as f:
 						rating = json.load(f)['imdbRating']
 					if rating:

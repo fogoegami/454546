@@ -1,6 +1,6 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-from Renderer import Renderer
+from __future__ import absolute_import
+from __future__ import division
+from Components.Renderer.Renderer import Renderer
 from enigma import ePixmap, eTimer, ePicLoad
 from Components.AVSwitch import AVSwitch
 from Components.Pixmap import Pixmap
@@ -11,12 +11,9 @@ import gettext
 from Tools.Directories import fileExists
 from Components.Console import Console
 
-REDC = '\033[31m'
-ENDC = '\033[m'
-
 
 def cprint(text):
-    print(REDC + "[xtraEvent] " + text + ENDC)
+    print("[xtraEvent] " + text)
 
 
 try:
