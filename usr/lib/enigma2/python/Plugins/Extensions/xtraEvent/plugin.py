@@ -15,7 +15,7 @@ from . import download
 from enigma import addFont
 from Tools.Directories import resolveFilename, SCOPE_FONTS
 
-addFont(resolveFilename(SCOPE_FONTS, "arial.ttf"), "xtraRegular", 100, 1)
+addFont(resolveFilename(SCOPE_FONTS, "DejaVuSansCondensed-Bold.ttf"), "RegularBold", 100, 1)
 
 try:
 	if config.plugins.xtraEvent.timerMod.value == "Clock":
