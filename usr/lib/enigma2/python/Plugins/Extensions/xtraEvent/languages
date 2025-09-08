@@ -79,6 +79,7 @@
 76 = Delete posters if the size on your device occupies
 77 = Choose the maximum size of the posters on your device.
 78 = Download ?
+79 = Enable this option and TMDB, along with Search Type to MOVIE.\nThis will give you cover art on this skin.
 
 [tr]
 0 = Açık/Kapalı
@@ -571,6 +572,7 @@
 76 = Eliminar posters si el tamaño en su dispositivo ocupa
 77 = Elija el tamaño máximo de los posters en su dispositivo.
 78 = Descargar ?
+79 = Habilita esta opción y TMDB, junto con Tipo de búsqueda a MOVIE.\nAsí tendrá carátulas en este skin.
 
 [it]
 0 = On/Off
