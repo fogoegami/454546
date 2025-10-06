@@ -118,7 +118,7 @@ config.plugins.xtraEvent.skinSelectColor = ConfigSelection(default = "#3478c1", 
 	("#2E8B57","SeaGreen"),
 	])
 config.plugins.xtraEvent.loc = ConfigDirectory(default='')
-config.plugins.xtraEvent.searchMOD = ConfigSelection(default = lng.get(lang, '14'), choices = [(lng.get(lang, '13')), (lng.get(lang, '14')), (lng.get(lang, '14a'))])
+config.plugins.xtraEvent.searchMOD = ConfigSelection(default = lng.get(lang, '13'), choices = [(lng.get(lang, '13')), (lng.get(lang, '14')), (lng.get(lang, '14a'))])
 config.plugins.xtraEvent.searchNUMBER = ConfigSelectionNumber(0, 999, 1, default=0)
 
 # config.plugins.xtraEvent.timerMod = ConfigYesNo(default = False)
@@ -206,7 +206,7 @@ config.plugins.xtraEvent.srcs = ConfigSelection(default="TMDB", choices = [
 	('IMDB(poster)', 'IMDB(poster)'),
 	('Bing', 'Bing'),
 	('Google', 'Google')])
-config.plugins.xtraEvent.searchType = ConfigSelection(default="tv", choices = [
+config.plugins.xtraEvent.searchType = ConfigSelection(default="movie", choices = [
 	('tv', 'TV'),
 	('movie', 'MOVIE'),
 	('multi', 'MULTI')])
@@ -662,6 +662,14 @@ class xtra(Screen, ConfigListScreen):
 
 				t = Timer(secs, startDownload)
 				t.start()
+			if config.plugins.xtraEvent.poster.value is False:  # norhap SET CONFIG DEFAULT AUTO.
+				config.plugins.xtraEvent.timerMod.value = "Period"
+				config.plugins.xtraEvent.poster.value = True
+				config.plugins.xtraEvent.tmdb.value = True
+				config.plugins.xtraEvent.searchNUMBER.value = 2
+				config.plugins.xtraEvent.searchMOD.value = config.plugins.xtraEvent.searchMOD.default
+				config.plugins.xtraEvent.searchType.value = config.plugins.xtraEvent.searchType.default
+				self.updateFinish()
 			self.close()
 		except Exception as err:
 			with open("/tmp/xtraEvent.log", "a+") as f:
