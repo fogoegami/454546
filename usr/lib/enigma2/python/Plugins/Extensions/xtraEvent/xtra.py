@@ -664,11 +664,18 @@ class xtra(Screen, ConfigListScreen):
 				t.start()
 			if config.plugins.xtraEvent.poster.value is False:  # norhap SET CONFIG DEFAULT AUTO.
 				config.plugins.xtraEvent.timerMod.value = "Period"
+				config.plugins.xtraEvent.timerMod.save()
+				config.plugins.xtraEvent.timerHour.value = 1
+				config.plugins.xtraEvent.timerHour.save()
 				config.plugins.xtraEvent.poster.value = True
 				config.plugins.xtraEvent.tmdb.value = True
-				config.plugins.xtraEvent.searchNUMBER.value = 2
-				config.plugins.xtraEvent.searchMOD.value = config.plugins.xtraEvent.searchMOD.default
-				config.plugins.xtraEvent.searchType.value = config.plugins.xtraEvent.searchType.default
+				config.plugins.xtraEvent.tmdb.save()
+				config.plugins.xtraEvent.searchNUMBER.value = 1
+				config.plugins.xtraEvent.searchNUMBER.save()
+				config.plugins.xtraEvent.searchMOD.value = "Bouquets"
+				config.plugins.xtraEvent.searchMOD.save()
+				config.plugins.xtraEvent.searchType.value = "movie"
+				config.plugins.xtraEvent.searchType.save()
 				self.updateFinish()
 			self.close()
 		except Exception as err:
